@@ -8,12 +8,18 @@ function App() {
 
   const {theme,setTheme} = useContext(Context)
   useEffect(()=>{
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-      setTheme('dark')
+    if(!localStorage.getItem('theme')){
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        setTheme('dark')
+      }
+      else{
+        setTheme('light')
+      }
     }
     else{
-      setTheme('light')
+      setTheme(localStorage.getItem('theme'))
     }
+   
   },[])
   useEffect(()=>{
     if(theme==='dark'){
@@ -22,9 +28,10 @@ function App() {
     else{
       document.documentElement.classList.remove('dark')
     }
+    localStorage.setItem('theme',theme)
   },[theme])
   return (
-    <div className='bg-light-primary dark:bg-dark-primary min-h-screen dark:text-dark-text'>
+    <div className='bg-light-primary dark:bg-dark-primary min-h-screen dark:text-dark-text'>      
       <Navbar />
       <Body />
     </div>

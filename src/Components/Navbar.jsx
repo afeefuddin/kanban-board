@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <section className='bg-light-secondary dark:bg-dark-secondary dark:text-dark-text'>        
     <nav>
-        <div className='ml-4 mr-4 p-4 flex flex-row justify-between'>
+        <div className='sm:ml-4 sm:mr-4 p-4 flex flex-row justify-between'>
            <div><Dropdown /></div>
            <div onClick={handleThemeChange}>{theme==='light' ? <img src={darkModeIcon} /> : <img src={lightModeIcon} />}</div> 
         </div>

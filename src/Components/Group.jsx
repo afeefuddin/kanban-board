@@ -45,12 +45,11 @@ function Group({ data, userDetails, type, val }) {
       if (ordering === "title") {
         return a.title.localeCompare(b.title);
       } else {
-        return a.priority - b.priority;
+        return b.priority - a.priority;
       }
     });
     setOrderTickets(tickets);
     setCount(countCur);
-    console.log(countCur);
   }
   useEffect(() => {
     groupTickets();
@@ -63,7 +62,7 @@ function Group({ data, userDetails, type, val }) {
       <div className="flex flex-col gap-2">
         {orderTickets &&
           orderTickets.map((item,index) => {
-            return <Card ticket={item} type={type} user={data?.users} status={index} />;
+            return <Card ticket={item} type={type} user={data?.users} status={index} key={index} />;
           })}
       </div>
     </div>
