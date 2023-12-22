@@ -34,6 +34,7 @@ function App() {
     <div className='bg-light-primary dark:bg-dark-primary min-h-screen dark:text-dark-text'>      
       <Navbar />
       <Body />
+      <div className='mt-8 text-center opacity-50'>Made With 💙 by <a href='https://github.com/afeefuddin' target='_blank'>Afeefuddin</a></div>
     </div>
   )
 }
