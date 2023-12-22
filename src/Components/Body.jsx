@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import UseAPI from '../Hooks/UseAPI'
 import DisplayContext from '../Context/DisplayContext'
 import Group from './Group'
-import Loading from './loading'
+import Loading from './Loading'
 
 function Body() {
   const [data,setData] = useState()
