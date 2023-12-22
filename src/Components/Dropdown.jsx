@@ -26,7 +26,7 @@ function Dropdown() {
       <div
         className={`${
           dropdownOpen ? "absolute" : "hidden"
-        } bg-light-secondary dark:bg-dark-secondary p-4 border border-dark-secondary dark:border-light-secondary top-16 left-8 rounded-md `}
+        } bg-light-secondary dark:bg-dark-secondary p-4 border border-dark-secondary dark:border-light-secondary top-16 left-8 rounded-md z-20`}
       >
         <div className="flex flex-col gap-3">
           <div className=" flex flex-row gap-20 w-full justify-between">

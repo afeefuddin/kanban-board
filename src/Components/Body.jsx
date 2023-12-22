@@ -13,30 +13,7 @@ function Body() {
   useEffect(()=>{
     fetchData();
   },[])
-  useEffect(()=>{
-
-  },[data])
-  useEffect(() => {
-    // Check if data and data.tickets are defined and data.tickets is an array
-    if (data?.tickets && Array.isArray(data.tickets)) {
-      const sortedTickets = [...data.tickets].sort((a, b) => {
-        if (ordering === 'title') {
-          return a.title.localeCompare(b.title);
-        } else {
-          return a.priority - b.priority;
-        }
-      });
   
-      // Update the state with the sorted array
-      setData((prevData) => ({
-        ...prevData,
-        tickets: sortedTickets,
-      }));
-    }
-  
-    console.log(ordering);
-    console.log(data);
-  }, [ordering]); 
   return (
     <div className='p-4'>
       <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
